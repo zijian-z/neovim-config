@@ -9,6 +9,12 @@ syntax on
 set tabstop=4 shiftwidth=4 softtabstop=4 
 set expandtab autoindent
 
+"" 进入normal模式
+inoremap <Leader><Leader> <Esc>
+"" 保存
+noremap <Space>w <Esc>:w!<CR>
+"" 快速执行外部命令
+noremap <Space>r <Esc>:w!<CR>:!<Space>
 "" 更快地在窗口间移动
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -19,12 +25,24 @@ cnoremap bd bp\|bd #<CR>
 "" 在buffer间移动
 nnoremap <leader>1 :bp<CR>
 nnoremap <leader>2 :bn<CR>
+"" 括号和引号补全
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
+inoremap { {}<LEFT>
+inoremap < <><LEFT>
+inoremap ' ''<LEFT>
+inoremap " ""<LEFT>
+
+"""""""""""""""""""""""""""""""""""""""
+""插件设置
+"""""""""""""""""""""""""""""""""""""""
 "" 主题 
 colorscheme gruvbox
 "" 文件树
 cnoremap tt NERDTreeToggle<CR>
 autocmd VimEnter * NERDTree | wincmd p
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 
 """""""""""""""""""""""""""""""""""""""
 "" 加载lua配置
