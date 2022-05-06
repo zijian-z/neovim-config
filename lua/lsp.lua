@@ -1,5 +1,7 @@
 local M = {}
 
+-- 需要安装nodejs
+
 function M.config()
 
     -- Add additional capabilities supported by nvim-cmp
