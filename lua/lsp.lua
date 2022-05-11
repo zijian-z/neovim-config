@@ -1,7 +1,5 @@
 local M = {}
 
--- 需要安装nodejs
-
 function M.config()
 
     -- Add additional capabilities supported by nvim-cmp
@@ -10,6 +8,7 @@ function M.config()
 
     local lspconfig = require('lspconfig')
 
+    -- pyright 和 tsserver 都需要nodejs
     -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
     local servers = {'tsserver', 'gopls', 'pyright'}
     for _, lsp in ipairs(servers) do

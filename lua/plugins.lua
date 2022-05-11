@@ -1,6 +1,9 @@
 return require('packer').startup(function()
-  use "wbthomason/packer.nvim" -- 插件管理
-  use 'morhetz/gruvbox' -- 主题
+  use "wbthomason/packer.nvim"
+
+  -- 主题
+  use 'morhetz/gruvbox'
+  use 'NLKNguyen/papercolor-theme'
 
   -- 模糊搜索
   use 'junegunn/fzf.vim'
@@ -11,6 +14,9 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp' 
   use 'saadparwaiz1/cmp_luasnip' 
   use 'L3MON4D3/LuaSnip' 
+
+  -- 代码高亮
+  use 'nvim-treesitter/nvim-treesitter'
 
   -- 文件树和上下状态栏
   use 'preservim/nerdtree'
